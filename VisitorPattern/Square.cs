@@ -14,9 +14,6 @@ namespace VisitorPattern
         }
 
         public int Length { get; }
-        //public override void Accept(IVisitor visitor)
-        //{
-        //    visitor.Visit(this);
-        //}
+       
     }
 }

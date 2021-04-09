@@ -16,17 +16,19 @@ namespace VisitorPattern
                 new Square(4),
             };
 
-            IVisitor visitor = new BlackboardDrawerVisitor();
+            IVisitor visitor1 = new BlackboardDrawerVisitor();
 
             try
             {
-                shapes.ForEach(shape => shape.Accept(visitor));
+                shapes.ForEach(shape => shape.Accept(visitor1));
             }
             catch (InvalidOperationException e)
             {
                 Console.WriteLine($"Exception: {e.Message}");
             }
-            Console.WriteLine("Visitor 2: ");
+           
+
+
             IVisitor visitor2 = new PaperDrawerVisitor(30);
 
             try

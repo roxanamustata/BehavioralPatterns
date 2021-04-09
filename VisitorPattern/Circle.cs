@@ -9,9 +9,6 @@
 
         public int Radius { get; }
 
-        //public override void Accept(IVisitor visitor)
-        //{
-        //    visitor.Visit(this);
-        //}
+
     }
 }
