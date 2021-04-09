@@ -1,0 +1,17 @@
+1. Reimplement the Visitor Pattern in the so that the Visitor objects will only 
+have to implement a single method, no matter how many shapes the visited hierarchy 
+has and the visited hierarchy will have to accept the visit only in the Shape class. 
+Use Pattern Matching.
+
+2. Add a visitor that calculates the area of the shape it receives in the "Visit" method and 
+publishes a tuple of type (Shape, float) where the first item is the shape received and the 
+second item is the calculated area for that shape. The subscribers of this publisher are objects 
+of class Engineer that, when notified, will analyze the result and pattern match the received area 
+and will print into the console the following messages:
+-"Area of circle with radius X is too big" if they receive a circle with area bigger than 30.0f
+-"Area of square with length X is too big" if they receive a square with area bigger than 20.0f
+-"Impossible area" if the area is negative or 0
+-"Seems right" in all other cases
+
+3. Add a rectangle to your current hierarchy and adapt the code where necessary.
+
