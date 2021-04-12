@@ -11,10 +11,12 @@ namespace VisitorPattern
             {
                 new Circle(5),
                 new Circle(2),
+                new Rectangle(2,3),
                 new Square(12),
                 new Circle(13),
                 new Square(4),
-            };
+
+             };
 
             IVisitor visitor1 = new BlackboardDrawerVisitor();
 

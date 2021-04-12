@@ -24,6 +24,11 @@ namespace VisitorPattern
                         _ when c.CalculateArea() > 30 => $"Area of circle with radius {c.Radius} is too big",
                         _ => "Seems right"
                     },
+                    Rectangle r => r switch
+                    {
+                        _ when r.CalculateArea() > 20 => $"Area of rectangle with length {r.Length} and width {r.Width} is too big",
+                        _ => "Seems right"
+                    },
                     _ => "Unknown shape"
                 },
                 _ when result.Item2 <= 0 => "Impossible area",

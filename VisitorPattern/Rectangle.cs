@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace VisitorPattern
 {
-    public class Square : Shape
+    public class Rectangle : Shape
     {
-        public Square(int length)
+        public Rectangle(int length, int width)
         {
             Length = length;
+            Width = width;
         }
 
         public int Length { get; }
-
+        public int Width { get; }
 
         public override float CalculateArea()
         {
-            return Length * Length;
+            return Length * Width;
         }
-
 
     }
 }

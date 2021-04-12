@@ -27,6 +27,12 @@ namespace VisitorPattern
                     _ when capacity < c.Radius * 2 => $"{ShowError()}\nCurrent capacity {capacity} but tried to draw circle of diameter {c.Radius * 2}",
                     _ => $"Drawing circle with radius {c.Radius} on paper"
                 },
+                Rectangle r => r switch
+                {
+                    _ when capacity < r.Width => $"{ShowError()}\nCurrent capacity {capacity} but tried to draw square of width {r.Width}",
+                    _ => $"Drawing rectangle with width {r.Width} and length {r.Length} on paper"
+                },
+
                 _ => "Unknown shape"
 
 
@@ -35,6 +41,7 @@ namespace VisitorPattern
             {
                 Square s => s.Length,
                 Circle c => c.Radius * 2,
+                Rectangle r => r.Width,
                 _ => 0
             };
             Console.WriteLine(result);
