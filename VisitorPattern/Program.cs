@@ -26,7 +26,7 @@ namespace VisitorPattern
             {
                 Console.WriteLine($"Exception: {e.Message}");
             }
-           
+
 
 
             IVisitor visitor2 = new PaperDrawerVisitor(30);
@@ -34,6 +34,19 @@ namespace VisitorPattern
             try
             {
                 shapes.ForEach(shape => shape.Accept(visitor2));
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine($"Exception: {e.Message}");
+            }
+
+
+            var visitor3 = new AreaCalculatorVisitor();
+            visitor3.AddSubscriber(new Engineer());
+
+            try
+            {
+                shapes.ForEach(shape => shape.Accept(visitor3));
             }
             catch (InvalidOperationException e)
             {

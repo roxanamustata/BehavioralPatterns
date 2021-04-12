@@ -7,6 +7,12 @@
             visitor.Visit(this);
 
         }
+
+        public virtual float CalculateArea()
+        {
+            return 0;
+        }
+       
         
     }
 }

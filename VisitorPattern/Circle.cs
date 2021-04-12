@@ -9,6 +9,9 @@
 
         public int Radius { get; }
 
-
+        public override float CalculateArea()
+        {
+            return (float)(Radius * Radius * System.Math.PI);
+        }
     }
 }
