@@ -1,6 +1,6 @@
 ﻿namespace VisitorPattern
 {
-    public class Shape : IVisitable
+    public abstract class Shape : IVisitable
     {
 
         public void Accept(IVisitor visitor) {
@@ -8,11 +8,9 @@
 
         }
 
-        public virtual float CalculateArea()
-        {
-            return 0;
-        }
-       
+        public abstract float CalculateArea();
+        
+
         
     }
 }
