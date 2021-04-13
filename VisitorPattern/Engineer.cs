@@ -7,35 +7,17 @@ namespace VisitorPattern
 
         public void Notify((Shape, float) result)
         {
-
-
-            string resultAnalysis = result.Item2 switch
+            (Shape shape, float area) = result;
+            string resultAnalysis = (shape, area) switch
             {
-                _ when result.Item2 > 0 => result.Item1 switch
-                {
-                    Square s => s switch
-                    {
-                        _ when s.CalculateArea() > 20 => $"Area of square with length {s.Length} is too big",
-                        _ => "Seems right"
-                    },
-
-                    Circle c => c switch
-                    {
-                        _ when c.CalculateArea() > 30 => $"Area of circle with radius {c.Radius} is too big",
-                        _ => "Seems right"
-                    },
-                    Rectangle r => r switch
-                    {
-                        _ when r.CalculateArea() > 20 => $"Area of rectangle with length {r.Length} and width {r.Width} is too big",
-                        _ => "Seems right"
-                    },
-                    _ => "Unknown shape"
-                },
-                _ when result.Item2 <= 0 => "Impossible area",
-                _ => "Unknown result"
-
+                (Circle c, _) when area > 30 => $"Area of circle with radius {c.Radius} is too big",
+                (Square s, _) when area > 20 => $"Area of square with length {s.Length} is too big",
+                (Rectangle r, _) when area > 20 => $"Area of rectangle with length {r.Length} and width {r.Width} is too big",
+                (Shape, _) when area <= 0 => "Impossible area",
+                _ => "Seems right"
 
             };
+
             Console.WriteLine(resultAnalysis);
         }
     }
