@@ -25,7 +25,15 @@ namespace VisitorPattern
 
         public void Visit(Shape shape)
         {
-            (Shape, float) result = (shape, shape.CalculateArea());
+            var area = 0;
+            (Shape, float) result = (shape, area) switch
+            {
+                (Circle c, _) => (c, (float)(c.Radius * c.Radius * Math.PI)),
+                (Square s, _) => (s, s.Length * s.Length),
+                (Rectangle r, _) => (r, r.Length * r.Width),
+                _ => throw new Exception("Unknown shape")
+            };
+
             Publish(result);
 
 

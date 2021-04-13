@@ -7,8 +7,6 @@
             visitor.Visit(this);
 
         }
-
-        public abstract float CalculateArea();
         
 
         

@@ -17,10 +17,6 @@ namespace VisitorPattern
         public int Length { get; }
         public int Width { get; }
 
-        public override float CalculateArea()
-        {
-            return Length * Width;
-        }
-
+       
     }
 }
